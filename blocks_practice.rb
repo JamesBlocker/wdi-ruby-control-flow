@@ -1,19 +1,28 @@
-def jump_up
-    puts "Getting ready to jump up"
-    puts "Jumping up"
+def jump_around
+    puts "Getting ready to jump around"
+    yield
     puts "End of the function"
 end
 
-def get_down
-    puts "Getting ready to get down"
-    puts "Getting down"
-    puts "End of function"
+jump_around() do
+    puts "Jump up jump up and get down"
 end
 
-def jump_up_and_get_down
-    jump()
-    get_down()
-    puts "End of the function"
+flavors = ["chocolate", "Vanilla", "Strawberry"]
+# flavors.each do |flavor|
+#     puts flavor
+# end
+
+class Array
+    def backwards_each
+        i = self.length - 1
+        while i >= 0 do
+            yield(self[i])
+            i -= 1
+        end
+    end
 end
 
-jump_up_and_get_down
+flavors.backwards_each do |flavor|
+    puts flavor
+end
