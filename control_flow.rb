@@ -28,9 +28,8 @@ end
 #Palindrome
 def palindrome
     puts "Say something"
-    input = gets.chomp.downcase
-    chars = input.split(' ').join('')
-    if chars == chars.reverse
+    input = gets.chomp.downcase.split(' ').join('')
+    if input == input.reverse
         puts "PALINDROME!"
     else
         puts "Definitely not a palindrome"
