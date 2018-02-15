@@ -35,12 +35,12 @@ class Integer
     def my_times
         i = 0
         while i < self do
-            yield
+            yield(i)
             i += 1
         end
     end
 end
 
-15.my_times do 
-    p "yallllooW"
+15.my_times do |i|
+    p "#{i} yallllooW"
 end
